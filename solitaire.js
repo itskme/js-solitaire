@@ -97,3 +97,48 @@ class Solitaire {
   });
   
 
+  function getSelectedCard() {
+    const selectedCardElement = document.querySelector('.tableau-pile .selected');
+    if (selectedCardElement) {
+      const cardText = selectedCardElement.textContent;
+      const cardRank = cardText.split(' of ')[0];
+      const cardSuit = cardText.split(' of ')[1];
+      return { rank: cardRank, suit: cardSuit };
+    }
+    return null;
+  }
+  
+  
+  function removeSelectedCard() {
+    const selectedCardElement = document.querySelector('.tableau-pile .selected');
+    if (selectedCardElement) {
+      selectedCardElement.parentNode.removeChild(selectedCardElement);
+    }
+  }
+  
+  
+  tableau.addEventListener('click', (event) => {
+    if (event.target.classList.contains('tableau-pile')) {
+      const cardElement = event.target.querySelector('div');
+      cardElement.classList.add('selected');
+    } else if (event.target.tagName === 'DIV') {
+      event.target.classList.add('selected');
+    }
+  });
+  
+
+  function initGameBoard() {
+    for (let i = 0; i < 7; i++) {
+      const tableauPile = document.createElement('div');
+      tableauPile.className = 'tableau-pile';
+      for (let j = 0; j <= i; j++) {
+        const card = game.tableau[i][j];
+        const cardElement = document.createElement('div');
+        cardElement.textContent = `${card.rank} of ${card.suit}`;
+        tableauPile.appendChild(cardElement);
+      }
+      tableau.appendChild(tableauPile);
+    }
+  }
+  
+  initGameBoard();

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Solitaire</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+
+    .tableau-pile {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      width: 120px;
+    }
+
+    .tableau-pile div {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #fff;
+    }
+
+    #foundation-pile {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+
+    #foundation-pile div {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #fff;
+    }
+
+    button {
+      margin: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+  <h1>Solitaire</h1>
+  <div id="game-board">
+    <h2>Tableau</h2>
+    <div id="tableau"></div>
+    <h2>Foundation</h2>
+    <div id="foundation-pile"></div>
+  </div>
+  <button id="draw-button">Draw Card</button>
+  <button id="play-button">Play Card</button>
+
+  <script src="solitaire.js"></script>
+</body>
+</html>

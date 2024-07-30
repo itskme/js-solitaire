@@ -52,4 +52,48 @@ class Solitaire {
       }
       return false;
     }
-}
+  
+    moveCard(card, pile) {
+      if (pile === 'foundation') {
+        return this.playCard(card);
+      } else if (pile === 'tableau') {
+      }
+    }
+  }
+  
+  
+  const game = new Solitaire();
+  game.shuffleDeck();
+  game.dealCards();
+  
+ 
+  const gameBoard = document.getElementById('game-board');
+  const tableau = document.getElementById('tableau');
+  const foundationPile = document.getElementById('foundation-pile');
+  const drawButton = document.getElementById('draw-button');
+  const playButton = document.getElementById('play-button');
+  
+
+  drawButton.addEventListener('click', () => {
+    const card = game.drawCard();
+    const cardElement = document.createElement('div');
+    cardElement.textContent = `${card.rank} of ${card.suit}`;
+    const tableauPile = document.createElement('div');
+    tableauPile.className = 'tableau-pile';
+    tableauPile.appendChild(cardElement);
+    tableau.appendChild(tableauPile);
+  });
+  
+
+  playButton.addEventListener('click', () => {
+    const selectedCard = getSelectedCard();
+    if (selectedCard) {
+      game.moveCard(selectedCard, 'foundation');
+      const cardElement = document.createElement('div');
+      cardElement.textContent = `${selectedCard.rank} of ${selectedCard.suit}`;
+      foundationPile.appendChild(cardElement);
+      removeSelectedCard();
+    }
+  });
+  
+

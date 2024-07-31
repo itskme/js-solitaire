@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Solitaire</title>
+  <title>Solitaire itskme</title>
   <style>
+    @font-face {
+        font-family: "bert";
+        src: url(bert.otf);
+    }
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
+      font-family: "bert", sans-serif;
+      background-color: #0d3d15;
+      color: whitesmoke;
+      text-align: center;
     }
 
 
@@ -13,34 +19,34 @@
       display: inline-block;
       margin: 10px;
       padding: 10px;
-      border: 1px solid #ddd;
+      border: 1px solid #000000;
       border-radius: 10px;
-      background-color: #f9f9f9;
+      background-color: #a81717;
       width: 120px;
     }
 
     .tableau-pile div {
       margin-bottom: 10px;
       padding: 10px;
-      border: 1px solid #ccc;
+      border: 1px solid #ff0000;
       border-radius: 10px;
-      background-color: #fff;
+      background-color: #0a681e;
     }
 
     #foundation-pile {
       margin-top: 20px;
       padding: 10px;
-      border: 1px solid #ddd;
+      border: 1px solid #000000;
       border-radius: 10px;
-      background-color: #f9f9f9;
+      background-color: #8b1212;
     }
 
     #foundation-pile div {
       margin-bottom: 10px;
       padding: 10px;
-      border: 1px solid #ccc;
+      border: 1px solid #241d1d;
       border-radius: 10px;
-      background-color: #fff;
+      background-color: #0d5304;
     }
 
     button {
@@ -48,18 +54,19 @@
       padding: 10px 20px;
       border: none;
       border-radius: 10px;
-      background-color: #4CAF50;
-      color: #fff;
+      background-color: #8d0d0d;
+      color: #1d1616;
       cursor: pointer;
     }
 
     button:hover {
       background-color: #3e8e41;
     }
+
   </style>
 </head>
 <body>
-  <h1>Solitaire</h1>
+  <h1>Solitaire itskme</h1>
   <div id="game-board">
     <h2>Tableau</h2>
     <div id="tableau"></div>
